@@ -1,5 +1,5 @@
 :root {
-  --background: #ffffff;
+  --background: #fcfcfc;
   --foreground: #171717;
   --toastify-color-success: mediumseagreen;
   --toastify-color-error: background-color:rgb(221, 54, 54);
@@ -46,12 +46,16 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   background-color: mediumseagreen;
 }
 
 .navbar-links {
   list-style: none;
+}
+
+.navbar-link {
+  font-weight: bold;
 }
 
 .main-content {

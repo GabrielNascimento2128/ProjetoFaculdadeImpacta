@@ -1,17 +1,12 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Suspense } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const latoSans = Lato({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ['300', '400', '700']
 });
 
 export const metadata = {
@@ -22,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${latoSans.className}`}>
         <nav className="navbar-main">
           <Link href="/" className="logo">
             <Image alt="petshow" src={"/petshow.png"} width={24} height={24}/>
@@ -30,12 +25,12 @@ export default function RootLayout({ children }) {
           </Link>
           <ul className="navbar-links">
             <li>
-              <Link href="/pets/view">Pets</Link>
+              <Link className="navbar-link" href="/pets/view">Pets</Link>
             </li>
           </ul>
         </nav>
         <Suspense>
-          <main className="main-content">{children}</main>
+          <main>{children}</main>
         </Suspense>
       </body>
     </html>
